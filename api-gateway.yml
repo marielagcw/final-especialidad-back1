@@ -16,7 +16,11 @@ spring:
           uri: lb://movie-service
           predicates:
             - Path=/movies/**
-        - id: playlistRoute
+        - id: catalogRoute
           uri: lb://catalog-service
           predicates:
             - Path=/catalog/**
+        - id: serieRoute
+          uri: lb://serie-service
+          predicates:
+            - Path=/series/**
