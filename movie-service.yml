@@ -14,10 +14,10 @@ spring:
     password: root
   jpa:
     hibernate:
-      ddl-auto: drop-create
+      ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLInnoDBDialect
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
 
 # message: hello from movie-service
 
