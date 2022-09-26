@@ -2,6 +2,9 @@ spring:
   zipkin:
     enabled: true
     baseUrl: http://zipkin:9411
+  sleuth:
+    sampler:
+      probability: 1.0
       
 management:
   endpoints:
