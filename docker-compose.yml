@@ -1,0 +1,35 @@
+version: '2.1'
+
+
+services:
+  mongodb: 
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    mem_limit: 512m 
+    ports:
+    - "27018:27017" #Puerto Servidor Docker (al exterior) / Puerto Contenedor (interno)
+
+  mysql:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+    - "3307:3306"
+
+  rabbit-mq:
+    image: rabbitmq:3.8.14-management
+    ports:
+    - "5672:5672"
+    - "15672:15672"
+
+  zipkin:
+    image: openzipkin/zipkin
+    ports:
+    - "9411:9411"
+  
+  
